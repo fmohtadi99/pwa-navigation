@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "A simple navigation system for Progressive Web Applications based on React.",
 	"type": "module",
-	"main": "src/index.js",
-	"module": "src/index.js",
+	"main": "index.js",
+	"module": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
