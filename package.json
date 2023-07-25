@@ -1,0 +1,32 @@
+{
+	"name": "pwa-navigation",
+	"version": "1.0.0",
+	"description": "A simple navigation system for Progressive Web Applications based on React.",
+	"type": "module",
+	"main": "src/index.js",
+	"module": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"pwa",
+		"pwa-navigation",
+		"navigation",
+		"router",
+		"drawer",
+		"modal",
+		"edge",
+		"navbar"
+	],
+	"author": "Foad Mohtadi",
+	"repository": "fmohtadi99/pwa-navigation",
+	"license": "MIT",
+	"devDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
+}
