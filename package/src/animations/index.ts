@@ -4,5 +4,7 @@ export * from "./fadeZoomIn";
 export * from "./fadeZoomOut";
 export * from "./fadeZoomReverse";
 export * from "./flipClockwise";
+export * from "./ios";
+export * from "./none";
 export * from "./slideLeftRight";
 export * from "./slideRightLeft";

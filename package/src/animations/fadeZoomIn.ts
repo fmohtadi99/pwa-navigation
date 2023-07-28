@@ -1,4 +1,6 @@
-export const fadeZoomIn = {
+import { ITransitionStyle } from "../interfaces";
+
+export const fadeZoomIn: ITransitionStyle = {
 	this: {
 		opacity: ["1", "0"],
 		scale: ["1", "1.2"],

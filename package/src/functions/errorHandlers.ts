@@ -1,25 +1,25 @@
-import { registeredScreens } from "../index";
+import { ITransitionStyle } from "../interfaces";
 
 export const errorHandlers = {
-	mismatchTiming: (delay, speed) => {
+	mismatchTiming: (delay: number, speed: number) => {
+		if (delay < 10)
+			throw new Error(`Action delay time must be greater than 10ms.`);
+		if (speed < 10)
+			throw new Error(`Transition duraction time must be greater than 10ms.`);
 		if (delay >= speed)
 			throw new Error(`Action Delay is less than animation speed.`);
 	},
-	noDrawer: component => {
-		if (!component)
-			throw new Error(
-				`Drawer component is not defined. Please check if you have added it to the context.\nRefer to <Navigation drawer={...} />.`
-			);
+	noDrawer: () => {
+		throw new Error(
+			`Drawer component is not defined. Please check if you have added it to the context.\nRefer to <Navigation drawer={...} />.`
+		);
 	},
-	notFound: screenId => {
-		const screenFound = registeredScreens.find(screen => screen.id == screenId);
-		if (!screenFound) {
-			throw new Error(
-				`Screen with id "${screenId}" not found. Please check if you have added it to the context.\nRefer to <Navigation screens={...} />.`
-			);
-		}
+	notFound: (screenId: string) => {
+		throw new Error(
+			`Screen with id "${screenId}" not found. Please check if you have added it to the context.\nRefer to <Navigation screens={...} />.`
+		);
 	},
-	styleOverload: style => {
+	styleOverload: (style: ITransitionStyle) => {
 		const items = [style.this, style.next];
 		items.forEach(item => {
 			const itemKeys = Object.keys(item);
@@ -32,7 +32,7 @@ export const errorHandlers = {
 					throw new Error(
 						`Style overload. Please check if you have added more than 2 styles in the array.`
 					);
-				item[property].forEach(value => {
+				item[property].forEach((value: any) => {
 					if (typeof value !== "string")
 						throw new Error(
 							`Style value must be a string. Please check if you have added a string value in the array.`
