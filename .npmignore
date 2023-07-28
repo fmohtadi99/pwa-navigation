@@ -1,0 +1,17 @@
+# Dependencies
+/node_modules/
+package.json
+package-lock.json
+
+# Config files
+.babelrc
+.gitignore
+webpack.config.js
+
+# Source files
+/src/
+index.js
+
+# Aux
+LICENSE
+README.md
