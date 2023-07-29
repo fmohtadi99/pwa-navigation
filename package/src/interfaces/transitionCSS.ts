@@ -1,6 +1,7 @@
 type TransitionValues = [/** BeforeValue */ string, /** AfterValue */ string];
 
 export interface ITransitionCSS {
+	[key: string]: TransitionValues | undefined;
 	accentColor?: TransitionValues;
 	alignContent?: TransitionValues;
 	alignItems?: TransitionValues;

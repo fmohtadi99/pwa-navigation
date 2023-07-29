@@ -1,2 +1,8 @@
 # Dependencies
 /node_modules
+
+# Dist
+/dist/
+
+# Test folder
+/test/

@@ -6,11 +6,11 @@ package-lock.json
 # Config files
 .babelrc
 .gitignore
+tsconfig.json
 webpack.config.js
 
-# Source files
-/src/
-index.js
+# Source folder
+/package/
 
 # Aux
 LICENSE

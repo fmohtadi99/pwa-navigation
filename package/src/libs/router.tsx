@@ -26,7 +26,7 @@ export const navigate = (screenId: string, options?: object) => {
 	}s`;
 	const thisKeys = Object.keys(userConfig.transitionStyle!.this);
 	thisKeys.forEach(key => {
-		thisScreen.style[key] = userConfig.transitionStyle!.this[key][1];
+		thisScreen.style[key as any] = userConfig.transitionStyle!.this[key]![1];
 	});
 
 	// Apply transition style for next screen
@@ -39,7 +39,7 @@ export const navigate = (screenId: string, options?: object) => {
 		}s`;
 		const nextKeys = Object.keys(userConfig.transitionStyle!.next);
 		nextKeys.forEach(key => {
-			nextScreen.style[key] = userConfig.transitionStyle!.next[key][1];
+			nextScreen.style[key as any] = userConfig.transitionStyle!.next[key]![1];
 		});
 		theRoutes.add(uid);
 	}, 10);
@@ -57,7 +57,7 @@ export const goBack = () => {
 	}s`;
 	const previousKeys = Object.keys(userConfig.transitionStyle!.this);
 	previousKeys.forEach(key => {
-		previousScreen.style[key] = userConfig.transitionStyle!.this[key][0];
+		previousScreen.style[key as any] = userConfig.transitionStyle!.this[key]![0];
 	});
 
 	// Apply transition style for last screen
@@ -68,7 +68,7 @@ export const goBack = () => {
 	}s`;
 	const lastKeys = Object.keys(userConfig.transitionStyle!.next);
 	lastKeys.forEach(key => {
-		lastScreen.style[key] = userConfig.transitionStyle!.next[key][0];
+		lastScreen.style[key as any] = userConfig.transitionStyle!.next[key]![0];
 	});
 
 	setTimeout(() => {
@@ -86,10 +86,10 @@ export const $routes: {
 	};
 }[] = [];
 
-export let $updateRoutes = e => e;
+export let $updateRoutes = (e:any) => e;
 
 export const Router = () => {
-	const [routes, setRoutes] = React.useState(new Date().getTime());
+	const [, setRoutes] = React.useState(new Date().getTime());
 	$updateRoutes = setRoutes;
 
 	return $routes.map((c, i) =>

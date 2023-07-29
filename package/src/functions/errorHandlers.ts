@@ -24,15 +24,15 @@ export const errorHandlers = {
 		items.forEach(item => {
 			const itemKeys = Object.keys(item);
 			itemKeys.forEach(property => {
-				if (item[property].length < 2)
+				if (item[property]!.length < 2)
 					throw new Error(
 						`Style underload. Please check if you have added less than 2 styles in the array.`
 					);
-				if (item[property].length > 2)
+				if (item[property]!.length > 2)
 					throw new Error(
 						`Style overload. Please check if you have added more than 2 styles in the array.`
 					);
-				item[property].forEach((value: any) => {
+				item[property]!.forEach((value: any) => {
 					if (typeof value !== "string")
 						throw new Error(
 							`Style value must be a string. Please check if you have added a string value in the array.`

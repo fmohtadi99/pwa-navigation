@@ -1,4 +1,5 @@
 import React from "react";
+import { IStyle } from "../interfaces";
 import { appConfig, userConfig } from "../index";
 import { $routes, $updateRoutes } from "../libs/router";
 
@@ -11,9 +12,9 @@ export const createPage = (
 ) => {
 	const route = React.createElement(component, options);
 	const styleKeys = Object.keys(userConfig.transitionStyle!.next);
-	const style = {};
+	const style: IStyle = {};
 	styleKeys.forEach(key => {
-		style[key] = userConfig.transitionStyle!.next[key][0];
+		style[key] = userConfig.transitionStyle!.next[key]![0];
 	});
 	const section = {
 		props: {

@@ -1,10 +1,9 @@
 import { appConfig } from "../index";
 
-const STORAGE_KEY = appConfig.storageKey;
 const getSession = (): string[] =>
-	JSON.parse(global.sessionStorage.getItem(STORAGE_KEY) as string);
+	JSON.parse(global.sessionStorage.getItem(appConfig.storageKey) as string);
 const setSession = (e: string): void =>
-	global.sessionStorage.setItem(STORAGE_KEY, e);
+	global.sessionStorage.setItem(appConfig.storageKey, e);
 
 export const theRoutes = {
 	/** Adds a new rendered screen ID to **Session Storage**. */
@@ -32,7 +31,8 @@ export const theRoutes = {
 	/** Removes the last screen ID from **Session Storage**.  */
 	pop: () => {
 		const i = getSession();
-		setSession(JSON.stringify(i.pop()));
+		i.pop();
+		setSession(JSON.stringify(i));
 	},
 
 	/** Returns the previous rendered screen ID. */

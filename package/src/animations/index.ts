@@ -1,3 +1,4 @@
+export * from "./android";
 export * from "./fade";
 export * from "./fadeZoom";
 export * from "./fadeZoomIn";

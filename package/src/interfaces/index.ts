@@ -32,6 +32,10 @@ export interface IScreens {
 	screen: React.ComponentType;
 }
 
+export interface IStyle {
+	[key: string]: string;
+}
+
 export interface ITransitionStyle {
 	/** CSS style for the current screen. */
 	this: ITransitionCSS;
@@ -41,10 +45,40 @@ export interface ITransitionStyle {
 }
 
 export interface IUserConfig {
+	/** Delay between calling functions while showing or hiding screens (ms)
+	 *
+	 * **Default:** `10`
+	 */
 	actionDelay?: number;
+
+	/** Duration of changing screens (ms)
+	 *
+	 * **Default:** `650`
+	 */
 	transitionDuration?: number;
+
+	/** Ease of transition
+	 *
+	 * **Default:** `"cubic-bezier(0.16, 1, 0.3, 1)"`
+	 */
 	transitionEase?: string;
+
+	/** Transition of changing between screens */
 	transitionStyle?: ITransitionStyle;
+
+	/** Usage of browser back function:
+	 *
+	 * `true` : For previous screen
+	 *
+	 * `false` : For previous URL
+	 *
+	 * **Default:** `true`
+	 */
 	disableBackFunction?: boolean;
+
+	/** Z-index of whole module
+	 *
+	 * **Default:** `10000`
+	 */
 	zIndex?: number;
 }

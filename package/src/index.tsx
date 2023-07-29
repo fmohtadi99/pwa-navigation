@@ -16,10 +16,10 @@ export const appConfig = {
 
 	/** Classname for router */
 	classRouter: `${PACKAGE_NAME}-router`,
-
+	
 	/** Package name */
 	packageName: PACKAGE_NAME,
-
+	
 	/** Storage key for router */
 	storageKey: `${PACKAGE_NAME}-routes`,
 };
