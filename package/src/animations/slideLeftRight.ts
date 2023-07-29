@@ -1,4 +1,6 @@
-export const slideLeftRight = {
+import { ITransitionStyle } from "../interfaces";
+
+export const slideLeftRight: ITransitionStyle = {
 	this: {
 		transform: ["translateX(0)", "translateX(100%)"],
 	},

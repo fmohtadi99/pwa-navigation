@@ -1,3 +1,4 @@
+"use client";
 import Navigation from "./src";
 
 export default Navigation;

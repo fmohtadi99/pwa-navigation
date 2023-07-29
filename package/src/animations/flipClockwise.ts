@@ -1,4 +1,6 @@
-export const flipClockwise = {
+import { ITransitionStyle } from "../interfaces";
+
+export const flipClockwise: ITransitionStyle = {
 	this: {
 		transform: ["rotateY(0deg)", "rotateY(180deg)"],
 	},

@@ -1,0 +1,20 @@
+# Dependencies
+/node_modules/
+package.json
+package-lock.json
+
+# Config files
+.babelrc
+.gitignore
+tsconfig.json
+webpack.config.js
+
+# Source folder
+/package/
+
+# Aux
+LICENSE
+README.md
+
+# Test folder
+/test/

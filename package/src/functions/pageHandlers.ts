@@ -1,36 +1,29 @@
-//@ts-check
 import React from "react";
+import { IStyle } from "../interfaces";
 import { appConfig, userConfig } from "../index";
 import { $routes, $updateRoutes } from "../libs/router";
 
-export const createPage = (component, id, zIndexIncrement, options) => {
+/** Renders next screen. */
+export const createPage = (
+	component: React.ComponentType,
+	id: string,
+	zIndexIncrement: number,
+	options?: object
+) => {
 	const route = React.createElement(component, options);
-	const styleKeys = Object.keys(userConfig.transitionStyle.next);
-	const style = {};
+	const styleKeys = Object.keys(userConfig.transitionStyle!.next);
+	const style: IStyle = {};
 	styleKeys.forEach(key => {
-		style[key] = userConfig.transitionStyle.next[key][0];
+		style[key] = userConfig.transitionStyle!.next[key]![0];
 	});
-
-	/**
-	 * @type {{
-	 * 	type: "section",
-	 * 	props: {
-	 * 		id: string;
-	 * 		className: string;
-	 * 		style: React.CSSProperties;
-	 * 	},
-	 *		child: React.ReactNode;
-	 * }}
-	 */
 	const section = {
-		type: "section",
 		props: {
 			id,
 			className: appConfig.classRouter,
 			style: {
 				...style,
 				transitionTimingFunction: userConfig.transitionEase,
-				zIndex: userConfig.zIndex + zIndexIncrement,
+				zIndex: userConfig.zIndex! + zIndexIncrement,
 			},
 		},
 		child: route,
@@ -39,6 +32,7 @@ export const createPage = (component, id, zIndexIncrement, options) => {
 	$updateRoutes(new Date().getTime());
 };
 
+/** Removes the last screen. */
 export const removePage = () => {
 	$routes.pop();
 	$updateRoutes(new Date().getTime());

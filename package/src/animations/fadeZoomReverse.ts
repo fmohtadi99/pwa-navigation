@@ -1,4 +1,6 @@
-export const fadeZoomReverse = {
+import { ITransitionStyle } from "../interfaces";
+
+export const fadeZoomReverse: ITransitionStyle = {
 	this: {
 		opacity: ["1", "0"],
 		scale: ["1", "0.8"],
