@@ -4,12 +4,10 @@
 	"description": "A simple navigation system for Progressive Web Applications based on React.",
 	"main": "dist/index.js",
 	"scripts": {
-		"prepublish": "npm run build",
-		"forward": "npm run beta",
-		"": "",
-		" ": "- Presets -",
-		"build": "babel ./package/index.ts -d dist --copy-files && babel ./package/src -d dist/src --copy-files",
-		"beta": "npm run build && npm publish --access=public"
+		"Transpile": "tsc",
+		"Private Beta": "npm publish --access=public",
+		"Publish Beta": "npm publish --tag=beta",
+		"Publish Stable": "npm publish"
 	},
 	"keywords": [
 		"pwa",
