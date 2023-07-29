@@ -1,6 +1,6 @@
 {
-	"name": "@fmohtadi99/pwa-navigation-beta",
-	"version": "1.1.0-26",
+	"name": "pwa-navigation",
+	"version": "1.2.0",
 	"description": "A simple navigation system for Progressive Web Applications based on React.",
 	"main": "dist/index.js",
 	"scripts": {
