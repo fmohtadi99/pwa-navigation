@@ -4,7 +4,7 @@
 	"description": "A simple navigation system for Progressive Web Applications based on React.",
 	"main": "dist/index.js",
 	"scripts": {
-		"Transpile": "tsc",
+		"Transpile": "tsc && xcopy package\\src\\style.css dist\\src\\style.css /Y",
 		"Private Beta": "npm publish --access=public",
 		"Publish Beta": "npm publish --tag=beta",
 		"Publish Stable": "npm publish"
